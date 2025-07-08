@@ -39,7 +39,7 @@ async def count(text):
               list_.remove(elt)
               is_space = True
             
-    return {"nb_words":len(list_)} 
+    return {"word_count":len(list_)} 
 
 if __name__ == "__main__":
     import uvicorn
