@@ -31,7 +31,9 @@ async def index():
 @app.post("/count")
 async def count_words(input: TextInput):
     words = input.text.split()
-    return {"word_count": len(words)}
+    characters = len(input.text)
+    characters_without_spaces = sum([len(word) for word in words])
+    return {"word_count": len(words),"characters":characters,"characters_without_spaces":characters_without_spaces}
 
 if __name__ == "__main__":
     import uvicorn
